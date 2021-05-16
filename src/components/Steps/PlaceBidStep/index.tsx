@@ -18,12 +18,12 @@ export type PlaceBidStepsProps = {
 }
 
 const PlaceBidSteps = ({ moveToNextStep, useGetStepData }: PlaceBidStepsProps) => {
-  const options = [{ text: 'HatchBack', value: 'hatchback'}, { text: 'Sedan', value: 'sedan'}, { text: 'SUV', value: 'suv'}]
+  const options = useMemo(() => [{ text: 'HatchBack', value: 'hatchback'}, { text: 'Sedan', value: 'sedan'}, { text: 'SUV', value: 'suv'}], []);
   const data = useGetStepData(0);
   const selectedOptionValue = useMemo(() => {
     const filteredOption = data?.carType ? options.filter(option => option.value === data.carType) : null
     return filteredOption && filteredOption.length > 0 && filteredOption[0].value; 
-  }, [data])
+  }, [data?.carType, options])
     const formik = useFormik({
         initialValues: {
           sourceLocation: data?.sourceLocation ?? '',

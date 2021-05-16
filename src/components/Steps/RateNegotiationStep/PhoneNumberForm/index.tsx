@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import Input from '../../../Input'
 import Button from '../../../Button'
 import './index.css'
-import RateNegotiationStep from '../index';
 
 export type PhoneNumberFormValues = {
     phoneNumber: string,
