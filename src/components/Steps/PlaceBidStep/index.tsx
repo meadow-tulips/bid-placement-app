@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useFormik } from 'formik';
 import Input from '../../Input'
 import Select from '../../Select'
@@ -19,13 +19,17 @@ export type PlaceBidStepsProps = {
 
 const PlaceBidSteps = ({ moveToNextStep, useGetStepData }: PlaceBidStepsProps) => {
   const options = [{ text: 'HatchBack', value: 'hatchback'}, { text: 'Sedan', value: 'sedan'}, { text: 'SUV', value: 'suv'}]
-
+  const data = useGetStepData(0);
+  const selectedOptionValue = useMemo(() => {
+    const filteredOption = data?.carType ? options.filter(option => option.value === data.carType) : null
+    return filteredOption && filteredOption.length > 0 && filteredOption[0].value; 
+  }, [data])
     const formik = useFormik({
         initialValues: {
-          sourceLocation: '',
-          numOfTravellers: 0,
-          destination: '',
-          carType: options[0].value
+          sourceLocation: data?.sourceLocation ?? '',
+          numOfTravellers: data?.numOfTravellers ?? 0,
+          destination: data?.destination ?? '',
+          carType: selectedOptionValue || options[0].value
         },
         onSubmit: values => {
           if(values.carType && values.destination && values.sourceLocation)

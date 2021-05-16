@@ -20,12 +20,13 @@ export type PhoneNumberFormTypes = {
 }
 
 const PhoneNumberForm = ({ moveToNextStep, rate, negotiable, useGetStepData }: PhoneNumberFormTypes) => {
+    const data = useGetStepData(1);
     const formik = useFormik({
         initialValues: {
-          phoneNumber: '',
-          name: '',
-          remarks: '',
-          subscribe: true
+          phoneNumber: data?.phoneNumber ?? '',
+          name: data?.name ?? '',
+          remarks: data?.remarks ?? '',
+          subscribe: data?.subscribe ?? true
         },
         onSubmit: values => {
             if(values.name && values.phoneNumber && values.phoneNumber.length === 10)
@@ -58,7 +59,6 @@ const PhoneNumberForm = ({ moveToNextStep, rate, negotiable, useGetStepData }: P
                 type="checkbox"
                 onChange={formik.handleChange}
                 value={formik.values.subscribe ? '1': '0'}
-                required
                 checked={formik.values.subscribe}
             />
             <label htmlFor="subscribe">Get updates on WhatsApp</label>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useFormik } from 'formik';
 import Input from '../../Input'
 import Button from '../../Button';
@@ -18,10 +18,16 @@ export type RateNegotiationStepProps = {
 
 const RateNegotiationStep = ({ moveToNextStep, useGetStepData }: RateNegotiationStepProps) => {
     const [showPhoneNumberForm, updateShowPhoneNumberForm] = useState(false)
+    const data = useGetStepData(1);
+    useEffect(() => {
+      if(data?.phoneNumber && data?.name)
+        updateShowPhoneNumberForm(true)
+    }, [data])
+
     const formik = useFormik({
         initialValues: {
-          rate: '',
-          negotiable: false,
+          rate: data?.rate ?? '',
+          negotiable: data?.negotiable ?? false,
         },
         onSubmit: values => {
           if(values?.rate)
@@ -37,7 +43,7 @@ const RateNegotiationStep = ({ moveToNextStep, useGetStepData }: RateNegotiation
     }, [formik.values])
 
     return <div className="rate-negotiation-step">
-          <JourneyDetails useGetStepData={useGetStepData} />
+          <JourneyDetails useGetStepData={useGetStepData} moveToNextStep={moveToNextStep} />
           <form onSubmit={formik.handleSubmit}>
               <Input
                 className="rate"

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import PlaceBidStep, { placeBidFormValues } from '../Steps/PlaceBidStep/index';
+import PlaceBidStep from '../Steps/PlaceBidStep/index';
 import RateNegotiationStep from '../Steps/RateNegotiationStep/index';
 import VerifyOtpStep from '../Steps/VerifyOtpStep/index';
 import SummaryStep from '../Steps/SummaryStep'
@@ -16,16 +16,21 @@ export type stepObject = {
 
 
 const StepComponent = ({ numOfSteps = 4 }: StepComponentTypes) => {
-    const [currentStep, moveToNextStep] = useState(3);
+    const [currentStep, moveToNextStep] = useState(1);
     const [stepsData, updateSteps] = useState<(stepObject)[]>([]);
 
     const useGetStepData = (index: number) => {
         return stepsData[index];
     }
 
-    const onMoveToNextStep = useCallback((values? : any) => {
-        updateSteps([...stepsData.slice(0, currentStep), {...values}, ...stepsData.slice(currentStep + 1, numOfSteps)])
-        moveToNextStep(currentStep + 1);
+    const onMoveToNextStep = useCallback((values? : any, nextStep?: number, reset?: boolean) => {
+        if(reset) {
+            moveToNextStep(1);
+            updateSteps([]);
+            return; 
+        }
+        updateSteps([...stepsData.slice(0, currentStep - 1), {...values}, ...stepsData.slice(currentStep + 1, numOfSteps)])
+        moveToNextStep(nextStep ? nextStep : currentStep + 1);
     }, [currentStep, stepsData, numOfSteps])
 
     switch(currentStep) {

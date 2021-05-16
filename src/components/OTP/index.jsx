@@ -3,7 +3,7 @@ import Input from '../Input';
 import './index.css';
 
 const OTP = ({ digits, className, handleChange, reset }) => {
-    const [otpArr, updateOtp] = useState(new Array(digits ?? 0));
+    const [otpArr, updateOtp] = useState(new Array(digits ?? 0).fill(''));
     const inputRefs = useRef(new Array(digits ?? 0));
 
     const onChange = useCallback((e, index) => {
@@ -19,7 +19,7 @@ const OTP = ({ digits, className, handleChange, reset }) => {
     useEffect(() => {
         const { shouldResetOtp, callBack } = reset || {};
         if(shouldResetOtp) {
-            updateOtp(new Array(digits ?? 0));
+            updateOtp(new Array(digits ?? 0).fill(''));
             callBack && callBack();
         }
     }, [reset, digits])
@@ -29,7 +29,7 @@ const OTP = ({ digits, className, handleChange, reset }) => {
         for(let i=0;i<digits;i++) {
             result.push(<Input
             className="otp-input"
-            ref={ele => inputRefs.current.push(ele)}
+            ref={ele => inputRefs.current[i] = ele}
             key={`digit-${i+1}`}
             type="text" 
             id={`digit-${i+1}`} 

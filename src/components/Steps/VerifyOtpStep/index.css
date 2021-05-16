@@ -33,3 +33,22 @@
     color:red;
     
 }
+
+.verify-otp .edit-icon {
+    margin-left: 1rem;
+    color: blue;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.verify-otp .edit-icon::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-image: url('../../assets/imgs/edit.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin-right: 5px;
+    object-fit: contain;
+}

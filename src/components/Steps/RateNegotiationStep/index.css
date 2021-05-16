@@ -82,3 +82,24 @@ h6.journey-details {
     margin-bottom: 8px;
     text-align: left;
 }
+
+h6.journey-details .edit-icon {
+    margin-left: auto;
+    color: blue;
+    cursor: pointer;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}
+
+h6.journey-details .edit-icon::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-image: url('../../assets/imgs/edit.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin-right: 5px;
+    object-fit: contain;
+}
