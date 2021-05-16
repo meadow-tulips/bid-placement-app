@@ -1,0 +1,25 @@
+.place-bid-form {
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+.place-bid-form .input-wrapper, .place-bid-form .select-wrapper {
+    margin-bottom: 45px;
+}
+
+.place-bid-form .btn {
+    width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+    .place-bid-form {
+        margin: 3rem auto;
+        overflow: hidden;
+        text-align: center;
+    }
+    .place-bid-form > div {
+        display: flex;
+        justify-content: space-between;
+    }
+}

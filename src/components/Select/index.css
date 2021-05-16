@@ -1,0 +1,27 @@
+.select-wrapper {
+    position: relative;
+    margin: 1rem 0;
+    padding: .5rem;
+    border: 1px solid lightblue;
+    display: flex;
+}
+
+.select-wrapper label {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    z-index: 1;
+    background: #ffffff;
+    padding: 0 8px;
+    color: teal;
+}
+
+.select-wrapper select {
+    padding: .6rem .45rem;
+    min-width: 200px;
+    font-weight: 800;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    width: 100%;
+}

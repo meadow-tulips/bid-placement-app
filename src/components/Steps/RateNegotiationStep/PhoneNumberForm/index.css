@@ -1,0 +1,27 @@
+.phone-number-form .subscribe {
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    border: 1px solid lightblue;
+    background-color: #ffefef;
+    margin-bottom: 2rem;
+}
+
+.phone-number-form .subscribe label {
+    font-size: 12px;
+}
+
+.phone-number-form .subscribe .input-wrapper {
+    border: none;
+    min-width: 20px;
+    margin: .4rem 0;
+}
+
+.phone-number-form .phone-number {
+    margin-bottom: 0;
+    border-bottom: 0;;
+}
+
+.phone-number-form .name {
+    margin-bottom: 2rem;
+}

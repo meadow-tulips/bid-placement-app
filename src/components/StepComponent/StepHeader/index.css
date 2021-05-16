@@ -1,0 +1,17 @@
+.step-header {
+    background-color: rgb(16, 40, 72);
+    padding: 3rem 0;
+    text-align: center; 
+}
+
+.step-header h2 {
+    color: white;
+}
+
+.step-header.hide {
+    display: none;
+}
+
+.step-header.show {
+    display: block;
+}

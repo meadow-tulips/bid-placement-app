@@ -1,0 +1,18 @@
+.otp-input {
+    width: 40px;
+    min-width: 0;
+    /* border-top: none;
+    border-left: none;
+    border-right: none; */
+    border: none;
+    border-bottom: 1px solid lightblue;
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 3rem;
+}
+
+.otp-input input {
+    font-size: 3rem;
+    padding: 0;
+    text-align: center;
+}

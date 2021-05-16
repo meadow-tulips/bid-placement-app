@@ -1,0 +1,15 @@
+.btn {
+    text-align: center;
+    padding: .8rem;
+    background: blue;
+    color: white;
+    font-weight: 800;
+    border: none;
+    margin: 0 auto;
+}
+
+.btn:disabled {
+    font-weight: 200;
+    color: lightblue;
+    background-color: #ffefef;
+}

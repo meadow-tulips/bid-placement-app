@@ -1,0 +1,35 @@
+.verify-otp {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.verify-otp button.resend-otp-btn {
+    border: none;
+    width: max-content;
+    background-color: inherit;
+    color: darkblue;
+    display: block;
+    text-decoration: underline darkblue;
+    cursor: pointer;
+    margin: 3rem auto;
+}
+
+.verify-otp button.verify-button {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+
+.verify-otp .otp {
+    margin-top: 3rem;
+}
+
+
+.verify-otp .error {
+    display: block;
+    margin: .5rem 0;
+    font-size: 12px;
+    color:red;
+    
+}

@@ -1,0 +1,42 @@
+.bid-details {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid lightblue;
+    align-items: center;
+}
+
+h6 {
+    color: lightcoral;
+    text-transform: uppercase;
+}
+
+ .bid-details div.user-info span,  .bid-details div.price span {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+ .bid-details div.user-info span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+ .bid-details div.price span:first-child {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+ .bid-details div.price span:nth-child(2) {
+    font-size: .85rem;
+    font-weight: 300;
+    color: teal;
+}
+
+ .bid-details div.price span:first-child::before {
+    content: '₹';
+}
+
+ .otp-info {
+    margin-top: 3rem;
+}
+

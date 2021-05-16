@@ -1,0 +1,84 @@
+.rate-negotiation-step {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.rate-negotiation-step .rate {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.rate-negotiation-step .rate input {
+    width: 50%;
+    font-size: 3rem;
+}
+
+
+
+.rate-negotiation-step .rate input::-webkit-outer-spin-button,
+.rate-negotiation-step .rate input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.rate-negotiation-step .rate input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.rate-negotiation-step .rate::before {
+    content: '₹';
+    position: relative;
+    right: 0;
+    font-size: 3rem;
+    width: 50%;
+    text-align: right;
+}
+
+.rate-negotiation-step .negotiable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1rem;
+    margin-bottom: 2rem;
+}
+
+.rate-negotiation-step .negotiable label {
+    margin-left: 10px;
+}
+
+.rate-negotiation-step button {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 480px) {
+    .rate-negotiation-step {
+        margin: 0 auto;
+    }
+}
+
+
+
+
+h6.journey-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: lightcoral;
+    text-transform: uppercase;
+}
+
+.details span {
+    font-weight: 600;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}

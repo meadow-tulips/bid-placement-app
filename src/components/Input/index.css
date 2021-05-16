@@ -1,0 +1,28 @@
+.input-wrapper {
+    position: relative;
+    margin: 1rem 0;
+    padding: .5rem;
+    border: 1px solid lightblue;
+    min-width: 200px;
+    display: flex;
+}
+
+.input-wrapper label {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    z-index: 1;
+    background: #ffffff;
+    padding: 0 8px;
+    color: teal;
+    font-size: 12px;
+}
+
+.input-wrapper input {
+    padding: .4rem .85rem;
+    font-size: 1rem;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+.summary-step {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.summary-step button.bid-submit {
+    width: 100%;
+}
